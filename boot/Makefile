@@ -6,7 +6,7 @@ $(BOOT_BIN):$(BOOT_ELF)
 	@echo "[BIN] $<"
 	cp $< $@
 	objcopy $@ -O binary
-	qemu-system-x86_64 -m 64M -serial stdio -monitor null -nographic -vnc :100 -drive file=msr.bin,if=ide  -gdb tcp::5070
+	#qemu-system-x86_64 -m 64M -serial stdio -monitor null -nographic -vnc :100 -drive file=msr.bin,if=ide  -gdb tcp::5070
 
 $(BOOT_ELF):$(BOOT_SRC)
 	@echo "[AS] $<"
